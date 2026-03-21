@@ -11,7 +11,6 @@ import Swal from "sweetalert2"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { removeHabit } from "@/Api/Api";
 import { useCompleteHabit } from "@/hooks/useCompleteHabit";
-import { useFaildHabit } from "@/hooks/useFaildHabit";
 import { manageExpairy } from "@/hooks/manageExpairy";
 import { manageDays } from "@/hooks/manageDays";
 
@@ -67,12 +66,8 @@ const HabitItem = ({ habit, index }: { habit: Habit, index: number }) => {
         habitComplete(habit)
     }
 
-    const { habitFailed } = useFaildHabit()
 
 
-    const handleFail = () => {
-        habitFailed(habit)
-    }
 
     // handleFail()
 
